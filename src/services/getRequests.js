@@ -12,7 +12,8 @@ export function getTrendingGifs(){
     const res = axios.get(TRENDING_URL)
     return res
 }
-export function getSearchedGifs(){
-    const res = axios.get(SEARCH_URL)
+//q parameter will be our user input in the search view
+export function getSearchedGifs(q){
+    const res = axios.get(SEARCH_URL+`${q}`)
     return res
 }

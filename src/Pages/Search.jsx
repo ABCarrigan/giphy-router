@@ -1,9 +1,10 @@
-import {searchGif} from '../services/getRequests.js'
+import {getSearchedGifs} from '../services/getRequests.js'
 import {useState, useEffect} from 'react'
 export default function Search() {
     const [searchedGifs, setSearchedGifs] = useState([])
+    let userInput = document.querySelector('input')
     useEffect(()=>{
-        setSearchedGifs()
+        getSearchedGifs(userInput)
         .then(res => setSearchedGifs(res.data.data))
         .catch((error) => error.message)
     }, [])
@@ -12,7 +13,7 @@ export default function Search() {
     return(
         <div>
             <form>
-                <input type="text"></input>
+                <input type="text" placeholder='cats'></input>
                 <button id="btnSearch">Search</button>
             </form>
             <div>
