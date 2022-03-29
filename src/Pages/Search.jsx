@@ -15,10 +15,13 @@ export default function Search() {
             <form>
                 <input type="text" placeholder='cats'></input>
                 <button id="btnSearch">Search</button>
-            </form>
-            <div>
 
-            </div>
+            </form>
+            {searchedGifs.map((each, i)=> {
+                return (
+                    <img key={i} src={each.images.downsized.url} className="trendingGifs"/>
+                )
+            })}
         </div>
     )
 }
