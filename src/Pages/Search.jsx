@@ -1,15 +1,23 @@
 import {searchGif} from '../services/getRequests.js'
 import {useState, useEffect} from 'react'
 export default function Search() {
-  
+    const [searchedGifs, setSearchedGifs] = useState([])
+    useEffect(()=>{
+        setSearchedGifs()
+        .then(res => setSearchedGifs(res.data.data))
+        .catch((error) => error.message)
+    }, [])
+
 
     return(
         <div>
-            <img src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_light_color_272x92dp.png"></img>
             <form>
                 <input type="text"></input>
                 <button id="btnSearch">Search</button>
             </form>
+            <div>
+
+            </div>
         </div>
     )
 }
@@ -25,7 +33,7 @@ export default function Search() {
     //     <div>
     //         {console.log(trendingGifs)}
     //         <h3>Check out some trending gifs!</h3>
-    //         {trendingGifs.map((each, i)=> {
+    //         {searchedGifs.map((each, i)=> {
     //             return(
     //                     <img key={i} src={each.images.downsized.url} className="trendingGifs"/>
     //                     )

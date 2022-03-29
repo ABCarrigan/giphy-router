@@ -10,7 +10,6 @@ export default function Trending() {
 
     return(
         <div>
-            {console.log(trendingGifs)}
             <h3>Check out some trending gifs!</h3>
             {trendingGifs.map((each, i)=> {
                 return(
