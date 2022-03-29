@@ -1,9 +1,10 @@
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'
 import Home from './Pages/Home'
 import Trending from './Pages/Trending'
+import Search from './Pages/Search'
 import './App.css'
-// use 3 endpoints from Giphy API
-//random,trending,search?
+// using 3 endpoints from Giphy API
+//random,trending,search
 
 function App() {
   return (
@@ -16,7 +17,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home/>}/>
         <Route path="/trending" element={<Trending/>}/>
-        <Route path=""/>
+        <Route path="/search" element={<Search/>}/>
         <Route path="*"/>
       </Routes>
     </Router>

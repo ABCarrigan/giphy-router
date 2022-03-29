@@ -2,6 +2,16 @@ import {searchGif} from '../services/getRequests.js'
 import {useState, useEffect} from 'react'
 export default function Search() {
   
+
+    return(
+        <div>
+            <img src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_light_color_272x92dp.png"></img>
+            <form>
+                <input type="text"></input>
+                <button id="btnSearch">Search</button>
+            </form>
+        </div>
+    )
 }
 
     // const [trendingGifs, setTrendingGifs] = useState([])
