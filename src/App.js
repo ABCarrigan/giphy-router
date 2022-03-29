@@ -1,25 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'
+import Home from './Pages/Home'
+// use 3 endpoints from Giphy API
+//random,trending,search?
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <Router>
+      <nav>
+        <Link to=""></Link>
+        <Link to=""></Link>
+        <Link to=""></Link>
+      </nav>
+      <Routes>
+        <Route path="/" element={<Home/>}/>
+        <Route path=""/>
+        <Route path=""/>
+        <Route path="*"/>
+      </Routes>
+    </Router>
+  )
 }
 
 export default App;
